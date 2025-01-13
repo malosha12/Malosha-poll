@@ -3,57 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malosha App</title>
+    <title>David Malosha - Website Yangu</title>
     <style>
-        /* Hapa ni sehemu ya CSS */
+        /* CSS - Muundo wa Tovuti na Rangi za Kuvutia */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Rangi nyepesi ya samaki ya baharini */
+        }
+
+        /* Animation ya kubadilisha rangi kwenye header */
+        @keyframes changeColors {
+            0% {
+                background-color: #3b5998; /* Rangi ya buluu ya Facebook */
+            }
+            25% {
+                background-color: #ff6347; /* Rangi ya nyekundu ya tomato */
+            }
+            50% {
+                background-color: #32cd32; /* Rangi ya kijani kibichi */
+            }
+            75% {
+                background-color: #ffcc00; /* Rangi ya dhahabu */
+            }
+            100% {
+                background-color: #3b5998; /* Rudi kwa buluu */
+            }
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            animation: changeColors 5s infinite; /* Animation ya mabadiliko ya rangi */
+        }
+
+        header nav ul {
+            list-style-type: none;
             padding: 0;
         }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        header nav ul li a:hover {
+            color: #ffcc00; /* Rangi ya dhahabu wakati wa kubonyeza */
+        }
+
+        section {
             padding: 20px;
-            background-color: #fff;
+            margin: 20px;
+            background-color: #ffffff; /* Rangi nyeupe kwa sehemu */
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
+        footer {
             text-align: center;
-            color: #333;
+            padding: 10px;
+            background-color: #333333; /* Rangi ya giza ya footer */
+            color: white;
         }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 2px solid #ddd; /* Rangi ya mpaka wa inputs */
+            font-size: 16px;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #3b5998; /* Rangi ya buluu inayoonekana wakati wa kuandika */
+            outline: none;
+        }
+
+        form button {
+            padding: 15px 25px;
+            background-color: #3b5998; /* Buluu ya rangi */
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
         }
 
-        .button:hover {
-            background-color: #45a049;
+        form button:hover {
+            background-color: #ffcc00; /* Rangi ya dhahabu wakati wa kubonyeza */
+        }
+
+        h1, h2 {
+            font-family: 'Arial', sans-serif;
+            color: #3b5998; /* Buluu kwa vichwa */
+        }
+
+        p {
+            font-size: 18px;
+            color: #555555; /* Rangi ya kijivu kwa maandishi */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Malosha Poll</h1>
-        <button class="button" id="voteBtn">Piga Kura</button>
-        <p id="result" style="text-align: center; font-size: 18px; color: #333;"></p>
-    </div>
+    <header>
+        <h1>David Malosha - Karibu kwenye Tovuti Yangu</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome</h2>
+        <p>Hii ni sehemu ya nyumbani ya tovuti yangu, yenye muonekano wa kuvutia na wa kisasa.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Maelezo kuhusu mimi yanaweza kuonekana hapa. Nilijitolea kutengeneza tovuti hii ili kuboresha ufanisi wangu kwenye mtandao.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Jina lako" required>
+            <input type="email" id="email" placeholder="Barua pepe yako" required>
+            <textarea id="message" placeholder="Ujumbe wako" required></textarea>
+            <button type="submit">Tuma Ujumbe</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 David Malosha. Haki zote zimehifadhiwa.</p>
+    </footer>
 
     <script>
-        // Hapa ni sehemu ya JavaScript
-        document.getElementById("voteBtn").addEventListener("click", function() {
-            document.getElementById("result").textContent = "Asante kwa kupiga kura!";
+        // JavaScript - Usanidi wa Tovuti
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Zuia ukurasa kurudi nyuma
+            alert("Ujumbe wako umetumwa!");
         });
     </script>
 </body>
-</html>   
+</html>
